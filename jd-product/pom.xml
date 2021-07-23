@@ -23,11 +23,6 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-        <!--mysql-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
     </dependencies>
 
 </project>
