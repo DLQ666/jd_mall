@@ -1,12 +1,12 @@
 server:
-  port: 88
+  port: 14000
 
 spring:
   application:
-    name: jd-gateway
+    name: jd-ware
   cloud:
     nacos:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yaml
-        namespace: b3d7d432-936e-4c06-b839-339fb277ea59
+        namespace: e161de13-5df5-479b-aea2-d9cc169c6aa1

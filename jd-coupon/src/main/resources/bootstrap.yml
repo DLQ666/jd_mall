@@ -1,12 +1,12 @@
 server:
-  port: 88
+  port: 11000
 
 spring:
   application:
-    name: jd-gateway
+    name: jd-coupon
   cloud:
     nacos:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yaml
-        namespace: b3d7d432-936e-4c06-b839-339fb277ea59
+        namespace: 0007418c-848b-4c37-bd07-8f916667c9ad
