@@ -12,6 +12,7 @@
         <module>jd-common</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
+        <module>jd-gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
