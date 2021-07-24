@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.dlq.jdmall.member.feign.CouponFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,16 @@ import com.dlq.common.utils.R;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+    @Autowired
+    private CouponFeignClient couponFeignClient;
+
+    @RequestMapping("/feignTest")
+    public R testFeign(){
+        R r = couponFeignClient.memberCoupons();
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setNickname("张三啊啊啊");
+        return  R.ok().put("member", memberEntity).put("coupons", r.get("coupons"));
+    }
 
     /**
      * 列表
