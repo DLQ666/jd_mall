@@ -1,6 +1,7 @@
 package com.dlq.jdmall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -33,13 +34,14 @@ public class CategoryController {
 
     /**
      * 列表
+     * 三级分类-查询-递归树形结构数据获取
      */
-    @RequestMapping("/list")
+    @RequestMapping("/list/tree")
     //@RequiresPermissions("product:category:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = categoryService.queryPage(params);
+        List<CategoryEntity> categoryEntityList = categoryService.listWithTree();
 
-        return R.ok().put("page", page);
+        return R.ok().put("data", categoryEntityList);
     }
 
 

@@ -1,10 +1,13 @@
 package com.dlq.jdmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 /**
@@ -56,5 +59,12 @@ public class CategoryEntity implements Serializable {
 	 * 商品数量
 	 */
 	private Integer productCount;
+
+	/**
+	 * 子分类
+	 */
+	@JsonInclude(JsonInclude.Include.NON_EMPTY) //对象该字段没数据就不显示该字段
+	@TableField(exist = false) //标注该字段在数据库中不存在
+	private List<CategoryEntity> children;
 
 }
